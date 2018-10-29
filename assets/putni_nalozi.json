@@ -1,0 +1,73 @@
+{
+	"putni_nalozi": {
+		"1": 
+		{
+			"korisnik": "1",
+			"datum_odlazak": "06.02.2018",
+			"datum_povratak": "08.02.2018",
+			"polaziste": "1",
+			"vrsta_prijevoza": "1",
+			"odrediste": "4",
+			"svrha_putovanja": "Predstavljanje proizvoda"
+		}
+
+	},
+
+	"vrsta_prijevoza":
+	{
+		"1":
+		{
+			"ime": "Automobil",
+			"aktivan": "1"
+		},
+		"2":
+		{
+			"ime": "Autobus",
+			"aktivan": "1"
+		}
+	},
+
+	"korisnici":
+	{
+		"1":
+		{
+			"ime": "Zvonimir",
+			"Prezime": "Marković",
+			"aktivan": "1"
+		}
+	},
+
+	"gradovi":
+	{
+		"1":
+		{
+			"naziv": "Virovitica",
+			"aktivan": "1" 
+		},
+		"2":
+		{
+			"naziv": "Slatina",
+			"aktivan": "1"  
+		},
+		"3":
+		{
+			"naziv": "Orahovica",
+			"aktivan": "1"  
+		},
+		"4":
+		{
+			"naziv": "Našice",
+			"aktivan": "1"  
+		},
+		"5":
+		{
+			"naziv": "Zagreb",
+			"aktivan": "1"  
+		},
+		"6":
+		{
+			"naziv": "Split",
+			"aktivan": "0"  
+		}
+	}
+}

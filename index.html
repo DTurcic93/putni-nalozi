@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Putni Nalozi</title>
+    <script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="assets/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<header>
+		    <nav class="navbar navbar-default navbar-fixed-top">
+		        <div class="container-fluid">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" 
+		                data-target="#main-navbar">
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		             </button>
+		   
+		            </div>
+		            <div class="collapse navbar-collapse" id="main-navbar">
+		                <ul class="nav navbar-nav">
+		                    <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Administracija putnih naloga</a></li>
+		                    <li ><a href="korisnci.html"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Administracija korisnika</a></li>
+		                    <li ><a href="vrsteprijevoza.html"> <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Administracija vrste prijevoza</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		    </nav>
+		</header>
+		<div class="vijesti-container" style="margin-top: 130px">
+			<h3 class="page-header">Dodaj Putni Nalog<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#dodaj-nalog"><span class="glyphicon glyphicon-plus"></span> </button></h3>
+			
+			<div id="tablica-container">
+				<table id="tablica-nalozi" class="table table-striped">
+					<thead>
+						<tr>
+							<th>R.br.</th>
+							<th>Ime i Prezime</th>
+							<th>Vrsta prijevoza</th>
+							<th>Polazište</th>
+							<th>Odredište</th>
+							<th>Datum odlaska</th>
+							<th>Datum povratka</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	
+	</div>
+
+	<div class="modal fade" id="dodaj-nalog" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Dodaj nalog</h4>
+				</div>
+				<div class="modal-body">
+					<form id="novi_nalog" action="">
+						
+							<div>
+							Dodajte koirisnika: <br>	
+							<select id="nalog_korisnik" >
+		  					</select><br>
+		  					</div>
+		  					<div >
+		  					Odaberite vrstu prijevoza: <br>			
+							<select id="nalog_vrsta" >
+		  					</select><br>
+		  					</div>
+		  					<div>
+		  					Odaberite polazište: <br>			
+							<select id="nalog_polaziste">
+		  					</select><br>
+		  					</div>
+		  					<div>
+		  					Odaberite odredište: <br>			
+							<select id="nalog_odrediste">
+		  					</select><br>
+		  					</div>
+		  					Datum odlaska: <br>			
+							<label><input id="inpt_odlazak" type="text" name="odlazak"> </label><br>
+							Datum povratka: <br>			
+							<label><input id="inpt_povratak" type="text" name="povratak"> </label><br>
+							Svrha putovanja: <br>			
+							<label><input id="inpt_svrha" type="text" name="svrha"> </label><br>
+							
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button onclick="DodajNalog()" type="button" class="btn btn-success" data-dismiss="modal">Dodaj</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Odustani</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="uredi-nalog" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Uredi nalog</h4>
+				</div>
+				<div class="modal-body">
+					<form id="novi_nalog" action="">
+						
+							<div>
+								Uredite koirisnika: <br>	
+								<select id="uredi_korisnik" >
+  								</select><br>
+  							</div>
+  							<div >
+  								Uredite vrstu prijevoza: <br>			
+								<select id="uredi_vrsta" >
+  								</select><br>
+  							</div>
+  							<div>
+  								Uredite polazište: <br>			
+								<select id="uredi_polaziste">
+  								</select><br>
+  							</div>
+  							<div>
+  								Uredite odredište: <br>			
+								<select id="uredi_odrediste">
+  								</select><br>
+  							</div>
+  							Uredite datum odlaska: <br>			
+							<label><input id="uredi_odlazak" type="text" name="odlazak"> </label><br>
+							Uredite datum povratka: <br>			
+							<label><input id="uredi_povratak" type="text" name="povratak"> </label><br>
+							Uredite svrha putovanja: <br>			
+							<label><input id="uredi_svrha" type="text" name="svrha"> </label><br>
+							
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="btnUrediNalog" type="button" class="btn btn-success" data-dismiss="modal">Ažuriraj</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Odustani</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="assets/plugins/jquery/jquery-3.2.1.min.js"></script>
+	<script src="assets/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+    <script src="js/config_firebase.js"></script>
+	<script src="js/funkcije.js"></script>
+</body>
+</html>
